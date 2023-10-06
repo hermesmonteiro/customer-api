@@ -92,14 +92,7 @@ namespace Customer.Host.Extensions
             app.UseSwagger(c =>
             {
                 c.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
-                {
-                    swaggerDoc.Servers = new List<OpenApiServer>
-                    {
-                        new OpenApiServer
-                        {
-                            Url = "/gamint/game-launch"
-                        }
-                    };
+                {                   
                 });
             });
             app.UseSwaggerUI(c =>

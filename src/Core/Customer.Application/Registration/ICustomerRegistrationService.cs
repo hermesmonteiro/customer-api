@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Customer.Application.Registration
 {
-    internal interface ICustomerRegistrationService
+    public interface ICustomerRegistrationService
     {
         Task Register(RegisterCustomerEntity registerCustomerEntity);
     }

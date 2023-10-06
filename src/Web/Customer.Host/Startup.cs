@@ -21,7 +21,7 @@ namespace Customer.Host
                 .AddInfrastructure(Configuration)
                 .AddVersioningConfigurations()
                 .AddOptions(Configuration, connectionStrings => connectionStrings
-                                            .SetProperties(Configuration.GetConnectionString(DbConnectionStrings.LaunchDbConnectionStringName)))
+                                            .SetProperties(Configuration.GetConnectionString(DbConnectionStrings.ConnectionStringName)))
                 .AddHealthChecksConfigurations(Configuration);
 
         public void Configure(IApplicationBuilder app,

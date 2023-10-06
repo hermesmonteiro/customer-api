@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Customer.Application.Registration
 {
-    internal class CustomerRegistrationService : ICustomerRegistrationService
+    public class CustomerRegistrationService : ICustomerRegistrationService
     {
         ICustomerRepository _customerRepository;
 

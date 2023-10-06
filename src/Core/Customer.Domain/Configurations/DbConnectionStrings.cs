@@ -4,9 +4,8 @@ namespace Customer.Domain.Configurations
 {
     public class DbConnectionStrings
     {
-        public const string LaunchDbConnectionStringName = "GAMING_INTEGRATION_API_DB";
+        public const string ConnectionStringName = "MAIN";
 
-        [Required(ErrorMessage = "Launch DB API Connection String is missing")]
         public string DbConnectionString { get; private set; }
 
         public DbConnectionStrings() { }

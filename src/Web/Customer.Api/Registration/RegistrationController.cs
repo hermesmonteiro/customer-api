@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Customer.Api;
 using Customer.Api.Filters;
+using Customer.Application.Registration;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Customer.Api.Registration
@@ -11,14 +12,23 @@ namespace Customer.Api.Registration
     [ApiKeyAuthorization]
     public class RegistrationController : ApiControllerBase
     {
-        public RegistrationController()
-        {
+        ICustomerRegistrationService _customerRegistrationService;
 
+        public RegistrationController(ICustomerRegistrationService customerRegistrationService)
+        {
+            _customerRegistrationService = customerRegistrationService;
         }
 
         [HttpPost]
         public async Task<IActionResult> GetAll([FromBody] RegisterCustomerRequest registerCustomerRequest)
         {
+            await _customerRegistrationService.Register(new RegisterCustomerEntity()
+            {
+                Country = registerCustomerRequest.Country,
+                Email = registerCustomerRequest.Email,
+                FullName = registerCustomerRequest.FullName,
+                PhoneNumber = registerCustomerRequest.PhoneNumber
+            });
 
             return new OkResult();
         }

@@ -42,17 +42,18 @@ namespace Customer.Infrastructure.Repositories.Customer
         {
             await ExecuteNonQueryAsync(
                 "InsertCustomer",
-                @"
+                $@"
                     INSERT INTO [dbo].[Customer]
                                ([FullName]
                                ,[Country]
                                ,[Email]
                                ,[PhoneNumber])
                          VALUES
-                               (<FullName, varchar(500),>
-                               ,<Country, varchar(50),>
-                               ,<Email, varchar(255),>
-                               ,<PhoneNumber, varchar(50),>)
+                               ('{registerCustomerEntity.FullName}'
+                               ,'{registerCustomerEntity.Country}'
+                               ,'{registerCustomerEntity.Email}'
+                               ,'{registerCustomerEntity.PhoneNumber}'
+                    )
                 ");
         }
 

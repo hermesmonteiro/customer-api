@@ -13,7 +13,6 @@ namespace Customer.Host.Extensions
                                                     Action<DbConnectionStrings> connectionString)
         {
             services.Configure<AuthTokenOptions>(configuration.GetSection("Auth"));
-            services.Configure<ApiCasinoExternalSettings>(configuration.GetSection("ApiCasinoExternalSettings"));
 
             services
                 .AddOptions<DbConnectionStrings>()
