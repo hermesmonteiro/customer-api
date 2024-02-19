@@ -16,7 +16,6 @@ namespace Customer.Api.Registration
 
         public RegistrationController(ICustomerRegistrationService customerRegistrationService)
         {
-            _customerRegistrationService = customerRegistrationService;
         }
 
         [HttpPost]

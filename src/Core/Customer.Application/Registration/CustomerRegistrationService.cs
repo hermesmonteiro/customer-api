@@ -19,6 +19,12 @@ namespace Customer.Application.Registration
 
         public async Task Register(RegisterCustomerEntity registerCustomerEntity)
         {
+            var amountToValidate = Constants.COEF / registerCustomerEntity.InitialAmount;
+            if (amountToValidate <= 0 )
+            {
+                throw new Exception("User with invalid initial amount");
+            }
+
             await _customerRepository.InsertCustomer(registerCustomerEntity);
         }
     }

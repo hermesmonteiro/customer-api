@@ -38,23 +38,25 @@ namespace Customer.Infrastructure.Repositories.Customer
         //        MapUrlLaunchConfig());
         //}
 
+        //await ExecuteNonQueryAsync(
+        //    "InsertCustomer",
+        //    $@"
+        //        INSERT INTO [dbo].[Customer]
+        //                   ([FullName]
+        //                   ,[Country]
+        //                   ,[Email]
+        //                   ,[PhoneNumber])
+        //             VALUES
+        //                   ('{registerCustomerEntity.FullName}'
+        //                   ,'{registerCustomerEntity.Country}'
+        //                   ,'{registerCustomerEntity.Email}'
+        //                   ,'{registerCustomerEntity.PhoneNumber}'
+        //        )
+        //    ");
+
         public async Task InsertCustomer(RegisterCustomerEntity registerCustomerEntity)
         {
-            //await ExecuteNonQueryAsync(
-            //    "InsertCustomer",
-            //    $@"
-            //        INSERT INTO [dbo].[Customer]
-            //                   ([FullName]
-            //                   ,[Country]
-            //                   ,[Email]
-            //                   ,[PhoneNumber])
-            //             VALUES
-            //                   ('{registerCustomerEntity.FullName}'
-            //                   ,'{registerCustomerEntity.Country}'
-            //                   ,'{registerCustomerEntity.Email}'
-            //                   ,'{registerCustomerEntity.PhoneNumber}'
-            //        )
-            //    ");
+
         }
 
     }
