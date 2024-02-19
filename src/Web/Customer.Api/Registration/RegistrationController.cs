@@ -31,5 +31,13 @@ namespace Customer.Api.Registration
 
             return new OkResult();
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromRoute] int id)
+        {
+            await _customerRegistrationService.Delete(id);
+
+            return new OkResult();
+        }
     }
 }

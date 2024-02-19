@@ -14,7 +14,12 @@ namespace Customer.Application.Registration
 
         public CustomerRegistrationService(ICustomerRepository customerRepository)
         {
-            _customerRepository = customerRepository;
+        }
+
+        public async Task Delete(int userRegistrationId)
+        {
+            var customer = await _customerRepository.GetCustomer(userRegistrationId);
+            await _customerRepository.DeleteCustomer(customer); 
         }
 
         public async Task Register(RegisterCustomerEntity registerCustomerEntity)

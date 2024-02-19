@@ -10,5 +10,6 @@ namespace Customer.Application.Registration
     public interface ICustomerRegistrationService
     {
         Task Register(RegisterCustomerEntity registerCustomerEntity);
+        Task Delete(int userRegistrationId);
     }
 }

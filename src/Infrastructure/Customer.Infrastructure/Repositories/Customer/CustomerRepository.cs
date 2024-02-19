@@ -13,6 +13,20 @@ namespace Customer.Infrastructure.Repositories.Customer
         public CustomerRepository(IOptions<DbConnectionStrings> options)
             => ConnectionString = options.Value.DbConnectionString;
 
+        public async Task<RegisterCustomerEntity> GetCustomer(int customerId)
+        {
+            return null;
+        }
+
+
+        public async Task DeleteCustomer(RegisterCustomerEntity customerEntity)
+        {
+            if (customerEntity.Country == "Uk")
+            {
+
+            }
+        }
+
         //public async Task<LaunchUrlConfig> GetUrlBaseConfigAsync()
         //{
         //    var parameters = new SqlParameter[]
